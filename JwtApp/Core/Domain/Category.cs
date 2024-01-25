@@ -1,12 +1,12 @@
 ﻿namespace JwtApp.Core.Domain;
 
-public class Categoty : Entity
+public class Category : Entity
 {
     public string Name { get; set; }
 
     public List<Product> Products { get; set; }
 
-    public Categoty()
+    public Category()
     {
         Products = new List<Product>();
     }

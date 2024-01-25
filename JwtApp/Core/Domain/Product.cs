@@ -7,14 +7,12 @@ public class Product : Entity
     public decimal Price { get; set; }
     public string CategoryId { get; set; }
 
-    public Categoty Categoty { get; set; }
+    public Category Category { get; set; }
 
     public Product()
     {
-        Categoty = new Categoty();
+        Category = new Category();
     }
-
-
 }
 
 

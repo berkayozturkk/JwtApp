@@ -9,7 +9,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
     public void Configure(EntityTypeBuilder<Product> builder)
     {
 
-        builder.HasOne(x => x.Categoty).WithMany(x => x.Products)
+        builder.HasOne(x => x.Category).WithMany(x => x.Products)
             .HasForeignKey(x => x.CategoryId);
     }
 }
