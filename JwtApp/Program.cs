@@ -1,4 +1,6 @@
+using JwtApp.Core.Application.Interfaces;
 using JwtApp.Persistance.Context;
+using JwtApp.Persistance.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,8 @@ builder.Services.AddDbContext<JwtContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("ConnStr"));
 });
+
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 
 var app = builder.Build();
