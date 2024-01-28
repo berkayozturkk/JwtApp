@@ -47,13 +47,13 @@ namespace JwtApp.Persistance.Repositories
 
         public async Task RemoveAsync(T entity)
         {
-             _context.Set<T>().Update(entity);
+             _context.Set<T>().Remove(entity);
             await _context.SaveChangesAsync();
         }
 
         public async Task UpdateAsync(T entity)
         {
-            _context.Set<T>().Remove(entity);
+            _context.Set<T>().Update(entity);
             await _context.SaveChangesAsync();
         }
     }
