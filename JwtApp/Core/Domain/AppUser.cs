@@ -6,10 +6,7 @@ public class AppUser : Entity
     public string Password { get; set; }
     public string AppRoleId { get; set; }
 
-    public AppRole AppRole { get; set; }
+    public AppRole? AppRole { get; set; }
 
-    public AppUser()
-    {
-        AppRole = new AppRole();
-    }
+    public AppUser() {}
 }
