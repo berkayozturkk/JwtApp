@@ -9,4 +9,12 @@ public class AppUser : Entity
     public AppRole? AppRole { get; set; }
 
     public AppUser() {}
+
+    public AppUser(string id,string userName, string password,
+        string appRoleId) : base(id)
+    {
+        UserName = userName;
+        Password = password;
+        AppRoleId = appRoleId;
+    }
 }
