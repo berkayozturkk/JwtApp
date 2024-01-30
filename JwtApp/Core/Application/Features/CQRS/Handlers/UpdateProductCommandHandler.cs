@@ -32,4 +32,3 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandR
         return new Result(true);
     }
 }
-

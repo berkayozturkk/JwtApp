@@ -26,3 +26,23 @@ public class GetProductQueryHandler
         return _mapper.Map<ProductDto>(product);
     }
 }
+
+public class GetCategoryQueryHandler
+    : IRequestHandler<GetCategoryQueryRequest, CategoryDto>
+{
+    private readonly IRepository<Category> _repository;
+    private readonly IMapper _mapper;
+
+    public GetCategoryQueryHandler(IRepository<Category> repository, IMapper mapper)
+    {
+        _repository = repository;
+        _mapper = mapper;
+    }
+
+    public async Task<CategoryDto> Handle(GetCategoryQueryRequest request, CancellationToken cancellationToken)
+    {
+        var category = await _repository.GetByFilterAsync(x => x.Id == request.Id);
+
+        return _mapper.Map<CategoryDto>(category);
+    }
+}
